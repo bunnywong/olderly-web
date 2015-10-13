@@ -1114,3 +1114,14 @@ function bootstrapcanvaswp_comment( $comment, $args, $depth ) {
   endswitch; // end comment_type check
 }
 endif;
+// ================================================================================
+/* Custom */
+function wptuts_styles_with_the_lot()
+{
+    // Register the style like this for a theme:
+    wp_register_style( 'custom-style', get_template_directory_uri() . '/css/custom-style.css', array(), '20120208', 'all' );
+
+    // For either a plugin or a theme, you can then enqueue the style:
+    wp_enqueue_style( 'custom-style' );
+}
+add_action( 'wp_enqueue_scripts', 'wptuts_styles_with_the_lot' );

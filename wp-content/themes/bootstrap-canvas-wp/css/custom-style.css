@@ -1,0 +1,45 @@
+.db, .debug {
+  border: 1px solid orange;
+}
+.bg-blue {
+  background-color: lightblue;
+}
+
+
+.navbar.navbar-inverse.navbar-static-top,
+.copyright {
+  display: none;
+}
+.voice-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: 5px solid black;
+  border-radius: 50px;
+  height: 100px;
+  width: 100px;
+  opacity: .8;
+  z-index: 99;
+  background-image: url('/wp-content/uploads/2015/10/icon-speaker.png');
+  background-size: 100%;
+}
+.bk {
+  text-transform: uppercase;
+  margin: 20px 0px;
+  color: #3B3131;
+  background-color: #E9E9E9;
+}
+.bk:hover {
+  background-color: black;
+  opacity: .7;
+}
+.bk:hover a {
+  color: white;
+  text-decoration: underline;
+}
+.home {
+  font-size: 80px;
+}
+body {
+  /*border: 1px solid;*/
+}
