@@ -6,7 +6,6 @@
 	get_header(); ?>
 
   <style>
-    h1.blog-title,
     h2.blog-post-title,
     .blog-post-meta,
     .blog-footer {
