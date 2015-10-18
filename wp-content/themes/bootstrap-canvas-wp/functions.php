@@ -1115,13 +1115,20 @@ function bootstrapcanvaswp_comment( $comment, $args, $depth ) {
 }
 endif;
 // ================================================================================
-/* Custom */
-function wptuts_styles_with_the_lot()
+// @Custom
+
+function custom_script_import()
 {
     // Register the style like this for a theme:
     wp_register_style( 'custom-style', get_template_directory_uri() . '/css/custom-style.css', array(), '20120208', 'all' );
-
     // For either a plugin or a theme, you can then enqueue the style:
     wp_enqueue_style( 'custom-style' );
+
+    /*
+    * Import Fit text JS
+    * @see:  https://github.com/davatron5000/FitText.js
+    */
+    wp_enqueue_script( 'fittext-js', get_template_directory_uri() . '/js/jquery.fittext.js' );
+    wp_enqueue_script( 'app-js', get_template_directory_uri() . '/js/app.js' );
 }
-add_action( 'wp_enqueue_scripts', 'wptuts_styles_with_the_lot' );
+add_action( 'wp_enqueue_scripts', 'custom_script_import' );

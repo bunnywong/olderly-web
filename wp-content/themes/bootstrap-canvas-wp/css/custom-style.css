@@ -4,8 +4,9 @@
 .bg-blue {
   background-color: lightblue;
 }
-
-
+.blog-header {
+  background-color: aliceblue;
+}
 .navbar.navbar-inverse.navbar-static-top,
 .copyright {
   display: none;
@@ -42,4 +43,15 @@
 }
 body {
   /*border: 1px solid;*/
+}
+h1.blog-title {
+  cursor: pointer;
+}
+h1.blog-title img {
+  margin-right: 20px;
+  height: 50px;
+  width: 50px;
+}
+.page-weather td {
+  width: 50%;
 }
