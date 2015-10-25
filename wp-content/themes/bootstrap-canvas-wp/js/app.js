@@ -9,6 +9,11 @@
     // Text Fit
     $(".text-fit").fitText(1.2, { minFontSize: '60px', maxFontSize: '200px' });
 
+    $('body .js-page-home .menu').on('click', function() {
+      var href = $(this).find('a').attr('href');
+      window.location = href;
+    });
+
     // Weather
     $('body .js-page-weather').find('.hungryfeed_item_description').addClass('js-speak');
 
