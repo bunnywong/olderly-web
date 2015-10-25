@@ -55,3 +55,41 @@ h1.blog-title img {
 .page-weather td {
   width: 50%;
 }
+.page-news .hungryfeed_items {
+  margin-top: 50px;
+}
+.page-news .hungryfeed_items > .hungryfeed_item {
+  border-top: 5px dashed lightgray;
+  padding: 50px 0px;
+}
+
+.menu {
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+}
+.menu a {
+  color: white;
+}
+.menu:hover a {
+  color: #428bca;
+}
+.menu.weather {
+  background-image: url(/wp-content/uploads/2015/10/icon-weather.png);
+}
+.menu.news {
+  background-image: url(/wp-content/uploads/2015/10/news.png);
+}
+.menu.photo {
+ background-image: url(/wp-content/uploads/2015/10/woman.png);
+}
+.menu.call {
+ background-image: url(/wp-content/uploads/2015/10/phone-book.png);
+}
+.menu.option {
+ background-image: url(/wp-content/uploads/2015/10/gear.png);
+}
+.menu.guest {
+ background-image: url(/wp-content/uploads/2015/10/tie-man.png);
+}
