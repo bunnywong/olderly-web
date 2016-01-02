@@ -44,8 +44,18 @@
     $('body .js-page-news').find(selector).addClass('js-speak');
 
     // --------------------------------------------------
+    //  Guest Book
+
+    if ($('.js-page-guest').length)  {
+      $('.blog-sidebar, .blog-post-meta').hide();
+    }
+
+    // --------------------------------------------------
     //  Call
 
+    if ($('.js-page-guest').length) {
+      $('.blog-sidebar').hide();
+    }
     if ($('.js-page-call').length) {
       $('table').filterTable();
       $('table tr > td:last-child').each(function() {

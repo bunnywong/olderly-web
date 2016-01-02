@@ -112,6 +112,6 @@ h1.blog-title img {
   background-color: pink;
 }
 .page-call table tr > td {
+  padding: 10px;
   text-align: left;
-  text-indent: 10px;
 }
