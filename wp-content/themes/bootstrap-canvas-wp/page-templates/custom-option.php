@@ -15,7 +15,7 @@
       <form class="speaking-speed">
         <div class="alert alert-info">
             <div class="form-inline">
-                <label class="control-label">Select speaking speed</label>
+                <label class="control-label">Speaking speed</label>
                 <label class="radio">
                     <input value="1" type="radio" name="speed" class="js-speed speed-1"> Slow
                 </label>
@@ -32,15 +32,15 @@
       <form class="background">
         <div class="alert alert-info">
             <div class="form-inline">
-                <label class="control-label">Select custom background</label>
+                <label class="control-label">Body background</label>
                 <label class="radio">
-                    <input value="1" type="radio" name="speed" class="js-background" data-bg="FCFCD7"> Light
+                    <input value="1" type="radio" name="speed" class="js-background" data-bg="5bc0de"> Blue
                 </label>
                 <label class="radio">
-                    <input value="2" type="radio" name="speed" class="js-background" data-bg="D4FCB2"> Middle
+                    <input value="2" type="radio" name="speed" class="js-background" data-bg="f0f8ff"> Pure
                 </label>
                 <label class="radio">
-                    <input value="3" type="radio" name="speed" class="js-background" data-bg="D9B8FE"> Strong
+                    <input value="3" type="radio" name="speed" class="js-background" data-bg="f2dede"> Orange
                 </label>
             </div>
         </div>
@@ -49,7 +49,7 @@
       <form class="font">
         <div class="alert alert-info">
             <div class="form-inline">
-                <label class="control-label">Select custom font size</label>
+                <label class="control-label">Font size</label>
                 <label class="radio">
                     <input value="1" type="radio" name="speed" class="js-font" data-font="0"> Regular
                 </label>

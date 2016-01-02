@@ -13,7 +13,7 @@
     }
 
     if (background == undefined) {
-      background = 'D4FCB2';
+      background = 'f0f8ff';
       localStorage.setItem("background", background);
     }
     updateBG(background);
