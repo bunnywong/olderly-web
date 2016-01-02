@@ -44,6 +44,13 @@
     $('body .js-page-news').find(selector).addClass('js-speak');
 
     // --------------------------------------------------
+    //  Call
+
+    if ($('.js-page-call').length) {
+      $('table').filterTable();
+    }
+
+    //--------------------------------------------------
     // =Option
     if ($('.js-page-option').length) {
       // Option:Speaking speed

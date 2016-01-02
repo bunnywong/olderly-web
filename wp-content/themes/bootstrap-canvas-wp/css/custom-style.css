@@ -107,3 +107,11 @@ h1.blog-title img {
 .page-weather .ico-speak-article {
   float: left;
 }
+
+.page-call table th {
+  background-color: pink;
+}
+.page-call table tr > td {
+  text-align: left;
+  text-indent: 10px;
+}

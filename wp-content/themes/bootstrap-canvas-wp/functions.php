@@ -1129,6 +1129,7 @@ function custom_script_import()
     * @see:  https://github.com/davatron5000/FitText.js
     */
     wp_enqueue_script( 'fittext-js', get_template_directory_uri() . '/js/jquery.fittext.js' );
+    wp_enqueue_script( 'filtertable-js', get_template_directory_uri() . '/js/jquery.filtertable.min.js' );
     wp_enqueue_script( 'app-js', get_template_directory_uri() . '/js/app.js' );
 }
 add_action( 'wp_enqueue_scripts', 'custom_script_import' );
