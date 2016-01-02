@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Custom Weather
+ * Template Name: Custom Weather & News
  */
 
 	get_header(); ?>
