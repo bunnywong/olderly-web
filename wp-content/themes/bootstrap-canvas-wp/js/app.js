@@ -1,11 +1,30 @@
 (function ($) {
   $(document).ready(function () {
-    var speed = localStorage.getItem("voice-speed");
+    // --------------------------------------------------
+    // Variable init
     var baseURL = location.protocol + '//' + location.host;
+    var speed = localStorage.getItem('voice-speed');
+    var background = localStorage.getItem('background');
+    var font = localStorage.getItem('font');
 
-    if (speed == undefined)
+    if (speed == undefined) {
       speed = 2;
+      localStorage.setItem('voice-speed', speed);
+    }
 
+    if (background == undefined) {
+      background = 'D4FCB2';
+      localStorage.setItem("background", background);
+    }
+    updateBG(background);
+
+    if (font == undefined) {
+      font = 0;
+      localStorage.setItem('font', font);
+    }
+    updateFont(font, 'init');
+
+    // --------------------------------------------------
     // Text Fit
     $(".text-fit").fitText(1.2, { minFontSize: '60px', maxFontSize: '200px' });
 
@@ -26,20 +45,44 @@
 
     // --------------------------------------------------
     // =Option
-    $('body .js-page-option form')
-      .each(function() {
-        $('input.speed-' + speed).attr('checked', 'checked');
-      })
-      .find('input.js-speed').change(function() {
-        var checked = $('input:checked').val();
-        localStorage.setItem("voice-speed", checked);
-        var $alert = $('.alert.alert-success');
-        if( $alert.hasClass('hidden') ) {
-          $alert.removeClass('hidden').text('Speaking speed updated').fadeIn('slow');
-        } else {
-          $alert.fadeOut().fadeIn();
+    if ($('.js-page-option').length) {
+      // Option:Speaking speed
+      $('form.speaking-speed')
+        .each(function() {
+          $('input.speed-' + speed).attr('checked', 'checked');
+        })
+        .find('input.js-speed').change(function() {
+          var checked = $('input.js-speed:checked').val();
+          localStorage.setItem("voice-speed", checked);
+          updateAlert();
+        });
+        // Option:Background
+        $('form.background')
+          .each(function() {
+            $('input.js-background[data-bg="'+ background +'"]')
+              .attr('checked', 'checked');
+          })
+          .find('input.js-background').change(function() {
+            var background = $('input.js-background:checked').data('bg');
+            localStorage.setItem("background", background);
+            updateBG(background);
+            updateAlert();
+            });
         }
-      });
+        // Option:Font
+        console.log(font);
+        $('form.font')
+          .each(function() {
+            $('input.js-font[data-font="'+ font +'"]')
+              .attr('checked', 'checked');
+          })
+          .find('input.js-font').change(function() {
+            var font = $('input.js-font:checked').data('font');
+            updateFont(font, 'update');
+            localStorage.setItem("font", font);
+            updateAlert();
+          });
+
 
     // --------------------------------------------------
     var speakIcon = '<img src="/wp-content/uploads/2015/10/icon-speaker.png" class="js-speak-article ico-speak-article" alt="click to speak this article" />';
@@ -75,16 +118,10 @@
       })
     }
 
-
-
-
-
     // --------------------------------------------------
     // =Text to speech
     $('.js-voice-button').on('click', function() {
       var content = $('.js-speak').text();
-      console.log(content);
-
       var speedIndex = speed / 3;
       responsiveVoice.speak(content, "UK English Male", {rate: speedIndex});
     });
@@ -98,8 +135,34 @@
         window.location = baseURL;
       });
   });
+  // --------------------------------------------------
+  // Functions
+
+  function updateBG(background) {
+    $('body').css('background-color', '#' + background);
+  }
+  function updateFont(font, status) {
+    var isBig = localStorage.getItem('font');
+    jQuery('*').each(function() {
+      $(this).css('font-size', function() {
+        if ($('.js-page-option').length && localStorage.getItem('font') == 2 && status =='update') {
+          font = -2;
+          console.log('hi');
+        }
+        return parseInt($(this).css('font-size')) + parseInt(font)  + 'px';
+      });
+    });
+  }
+
+  function updateAlert() {
+    var $alert = $('.alert.alert-success');
+    if( $alert.hasClass('hidden') ) {
+      $alert.removeClass('hidden').text('Option updated').fadeIn('slow');
+    } else {
+      $alert.fadeOut().fadeIn();
+    }
+  }
+
 }) (jQuery);
 
-function pageNews() {
 
-}
