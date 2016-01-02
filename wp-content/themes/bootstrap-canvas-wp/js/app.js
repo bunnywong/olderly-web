@@ -48,6 +48,10 @@
 
     if ($('.js-page-call').length) {
       $('table').filterTable();
+      $('table tr > td:last-child').each(function() {
+        var tel = $.trim($(this).text());
+        $(this).wrapInner('<a href="tel:'+ tel +'"></a>');
+      })
     }
 
     //--------------------------------------------------
