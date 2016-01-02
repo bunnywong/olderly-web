@@ -115,3 +115,8 @@ h1.blog-title img {
   padding: 10px;
   text-align: left;
 }
+
+/* Plug-in */
+.attachmentRules, .attachmentRules * {
+  font-weight: 100!important;
+}
